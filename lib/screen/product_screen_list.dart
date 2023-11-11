@@ -1,3 +1,4 @@
+import 'package:crud_api/screen/add_newproduct_list.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_api/widgets/product_item.dart';
 
@@ -17,6 +18,7 @@ class ProductScreenList extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.orangeAccent,
             onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddNewProductList()),);
 
         },
           shape: RoundedRectangleBorder(

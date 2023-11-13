@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:crud_api/screen/add_newproduct_list.dart';
+import '../screen/product_screen_list.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
+  const ProductItem({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +45,13 @@ class ProductItem extends StatelessWidget {
                   ),
                 ));
       },
-      title: const Text('Prodcut Title'),
-      subtitle: const Text('Product description'),
-      trailing: const Text(
-        '\$150',
-        style: TextStyle(fontSize: 16),
+      title:  Text(product.productName),
+      subtitle:  Text(product.productCode),
+      trailing:  Text('\$${product.unitPrice}'
+        ,style: const TextStyle(fontSize: 16),
       ),
       leading: Image.network(
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrMLtsOqs3QfE9WMtU2tt9mT0pUHUdh3q_VelWI_plZqnyj5xgHVp1WR62n77lWxH405k&usqp=CAU',
+        product.image,
         width: 80,
       ),
     );
